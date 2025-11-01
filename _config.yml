@@ -54,7 +54,7 @@ author:
 
   # Social media
   artstation       : # Username
-  bluesky          : "heibeixuh.bsky.social" # Replace this with you Bluesky username
+  bluesky          : "https://bsky.app/profile/heibeixuh.bsky.social" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
