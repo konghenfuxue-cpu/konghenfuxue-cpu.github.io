@@ -154,7 +154,7 @@ social:
 analytics:
   provider               : "google-gtag" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
-    tracking_id          : "G-HXF3Q6W437"
+    tracking_id          : "G-T9BF730PG7"
 
 
 # Reading Files
