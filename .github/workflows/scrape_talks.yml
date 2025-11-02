@@ -6,6 +6,7 @@ on:
       - 'talks/**'
       - '_talks/**'
       - 'talkmap.ipynb'
+  workflow_dispatch:
 
 # Grant the workflow token the minimum required write permissions
 permissions:
