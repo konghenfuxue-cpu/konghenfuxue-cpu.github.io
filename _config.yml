@@ -87,6 +87,8 @@ publication_category:
     title: '暂无'    
   conferences:
     title: '暂无'
+  随笔:
+    title: 随笔
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
@@ -96,7 +98,7 @@ future                   : true
 read_more                :  "阅读全文" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : "giscus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "giscus", "custom"
   disqus:
     shortname            :
   discourse:
@@ -105,6 +107,17 @@ comments:
     appid                :
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
+  giscus:
+    repo                 : "konghenfuxue-cpu/konghenfuxue-cpu.github.io"  # GitHub 仓库名
+    repo_id              : "R_kgDOQNXlvg"  # 仓库 ID
+    category             : "Announcements"  # Discussion 分类名
+    category_id          : "DIC_kwDOQNXlvs4CxXHO"  # 分类 ID
+    mapping              : "pathname"  # 页面 ↔️ discussion 映射关系
+    reactions_enabled    : "1"  # 启用反应表情
+    theme                : "preferred_color_scheme"  # 主题: light, dark, preferred_color_scheme 等
+    lang                 : "zh-CN"  # 语言
+    input_position       : "bottom"  # 评论框位置: top, bottom
+    loading              : "lazy"  # 加载方式: lazy (推荐)
 staticman:
   allowedFields          : ['name', 'email', 'url', 'message']
   branch                 : "gh-pages" # "master", "gh-pages"
@@ -299,7 +312,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Shanghai # 中国时区 https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins

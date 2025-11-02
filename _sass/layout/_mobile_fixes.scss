@@ -1,0 +1,53 @@
+/*
+ * Mobile-specific fixes to prevent content from being cut off on small screens.
+ * Keep this partial minimal and safe; it only overrides behaviors that often
+ * cause hidden or overflowing content on phones.
+ */
+
+@media screen and (max-width: 768px) {
+  /* Avoid horizontal wobble; prevent accidental sideways scrolling */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Ensure main content wrappers don't clip children */
+  .page,
+  .page__inner-wrap,
+  .page__content {
+    overflow: visible !important;
+  }
+
+  /* Long words/URLs won't push layout wider than viewport */
+  .page__content {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* Wide tables become horizontally scrollable instead of overflowing */
+  .page__content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Code blocks keep horizontal scroll and stay within the viewport */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Generic media elements scale down to fit */
+  iframe,
+  embed,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Greedy-nav dropdown can scroll on small screens instead of cutting off */
+  .greedy-nav .hidden-links {
+    max-height: 70vh;
+    overflow: auto;
+  }
+}

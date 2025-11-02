@@ -1,15 +1,27 @@
 {
-    "name": "ACADEMIC PAGES",
-    "dockerComposeFile": "../docker-compose.yaml",
-    "service": "jekyll-site",
-    "remoteEnv": {
-        "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server"
-    },
-    "runArgs": [
-        "--user",
-        "1000:1000"
-    ],
-    "workspaceFolder": "/usr/src/app",
-    "remoteUser": "vscode",
-    "forwardPorts": [4000] // Add port forwarding
+  "name": "ACADEMIC PAGES",
+  "dockerComposeFile": "../docker-compose.yaml",
+  "service": "jekyll-site",
+  "remoteEnv": {
+    "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server"
+  },
+  "runArgs": [
+    "--user",
+    "1000:1000"
+  ],
+  "workspaceFolder": "/usr/src/app",
+  "remoteUser": "vscode",
+  "forwardPorts": [4000],
+
+  // ✅ 新增以下两部分
+  "containerEnv": {
+    "http_proxy": "http://host.docker.internal:10808",
+    "https_proxy": "http://host.docker.internal:10808",
+    "HTTP_PROXY": "http://host.docker.internal:10808",
+    "HTTPS_PROXY": "http://host.docker.internal:10808"
+  },
+  "runArgs": [
+    "--network=host",       // 让容器共用宿主机网络
+    "--user", "1000:1000"
+  ]
 }
