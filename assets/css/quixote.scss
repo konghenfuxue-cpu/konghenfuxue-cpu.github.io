@@ -6,16 +6,21 @@
  * Don Quixote Artistic Style Theme
  */
 
-/* 全局样式 - 羊皮纸背景 */
+/* 全局样式 - 羊皮纸背景 + 堂吉诃德插画 */
 body {
   background-color: #fefef8 !important;
-  background-image: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.02) 2px,
-    rgba(0, 0, 0, 0.02) 4px
-  ) !important;
+  background-image: 
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><g opacity="0.03" fill="%231a1a1a"><circle cx="80" cy="60" r="40" stroke="%231a1a1a" stroke-width="3" fill="none"/><line x1="65" y1="45" x2="55" y2="35" stroke="%231a1a1a" stroke-width="2"/><line x1="75" y1="40" x2="70" y2="30" stroke="%231a1a1a" stroke-width="2"/><line x1="85" y1="40" x2="85" y2="25" stroke="%231a1a1a" stroke-width="2"/><line x1="95" y1="45" x2="100" y2="35" stroke="%231a1a1a" stroke-width="2"/><line x1="105" y1="55" x2="115" y2="50" stroke="%231a1a1a" stroke-width="2"/><rect x="265" y="30" width="15" height="80" fill="%231a1a1a"/><path d="M 270 25 Q 275 20 280 25 L 285 35 Q 290 40 285 45 L 280 55 Q 275 60 270 55 Z" fill="%231a1a1a"/><ellipse cx="275" cy="115" rx="25" ry="35" fill="%231a1a1a"/><rect x="265" y="150" width="8" height="120" fill="%231a1a1a"/><rect x="277" y="150" width="8" height="120" fill="%231a1a1a"/><rect x="255" y="150" width="35" height="15" fill="%231a1a1a"/><path d="M 290 120 L 310 115 L 315 125 L 295 130 Z" fill="%231a1a1a"/><path d="M 260 125 L 240 120 L 235 130 L 255 135 Z" fill="%231a1a1a"/><rect x="263" y="265" width="12" height="8" fill="%231a1a1a"/><rect x="273" y="265" width="12" height="8" fill="%231a1a1a"/><ellipse cx="150" cy="180" rx="30" ry="40" fill="%231a1a1a"/><rect x="145" y="220" width="10" height="100" fill="%231a1a1a"/><rect x="140" y="220" width="20" height="12" fill="%231a1a1a"/><rect x="138" y="315" width="12" height="8" fill="%231a1a1a"/><rect x="150" y="315" width="12" height="8" fill="%231a1a1a"/><path d="M 160 185 L 180 180 L 185 190 L 165 195 Z" fill="%231a1a1a"/><path d="M 140 190 L 120 185 L 115 195 L 135 200 Z" fill="%231a1a1a"/><rect x="100" y="450" width="80" height="3" fill="%231a1a1a"/><rect x="200" y="455" width="60" height="3" fill="%231a1a1a"/><path d="M 30 470 Q 35 465 40 470 L 45 480 L 35 485 Z" fill="%231a1a1a"/><path d="M 320 465 L 330 460 L 340 470 L 330 475 Z" fill="%231a1a1a"/><circle cx="370" cy="480" r="8" fill="%231a1a1a"/></g></svg>'),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 2px,
+      rgba(0, 0, 0, 0.02) 4px
+    ) !important;
+  background-position: right bottom, 0 0 !important;
+  background-repeat: no-repeat, repeat !important;
+  background-size: 400px auto, auto !important;
   font-family: 'Crimson Text', Georgia, 'Times New Roman', serif !important;
 }
 
@@ -104,4 +109,28 @@ body {
 .page__footer {
   border-top: 4px double #3d3d3d !important;
   background: #fefef8 !important;
+}
+
+/* 堂吉诃德背景装饰 */
+body::before {
+  content: "";
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 300px;
+  height: 450px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><g opacity="1" fill="%231a1a1a"><circle cx="80" cy="60" r="40" stroke="%231a1a1a" stroke-width="3" fill="none"/><line x1="65" y1="45" x2="55" y2="35" stroke="%231a1a1a" stroke-width="2"/><line x1="75" y1="40" x2="70" y2="30" stroke="%231a1a1a" stroke-width="2"/><line x1="85" y1="40" x2="85" y2="25" stroke="%231a1a1a" stroke-width="2"/><line x1="95" y1="45" x2="100" y2="35" stroke="%231a1a1a" stroke-width="2"/><line x1="105" y1="55" x2="115" y2="50" stroke="%231a1a1a" stroke-width="2"/><rect x="265" y="30" width="15" height="80" fill="%231a1a1a"/><path d="M 270 25 Q 275 20 280 25 L 285 35 Q 290 40 285 45 L 280 55 Q 275 60 270 55 Z" fill="%231a1a1a"/><ellipse cx="275" cy="115" rx="25" ry="35" fill="%231a1a1a"/><rect x="265" y="150" width="8" height="120" fill="%231a1a1a"/><rect x="277" y="150" width="8" height="120" fill="%231a1a1a"/><rect x="255" y="150" width="35" height="15" fill="%231a1a1a"/><path d="M 290 120 L 310 115 L 315 125 L 295 130 Z" fill="%231a1a1a"/><path d="M 260 125 L 240 120 L 235 130 L 255 135 Z" fill="%231a1a1a"/><rect x="263" y="265" width="12" height="8" fill="%231a1a1a"/><rect x="273" y="265" width="12" height="8" fill="%231a1a1a"/><ellipse cx="150" cy="180" rx="30" ry="40" fill="%231a1a1a"/><rect x="145" y="220" width="10" height="100" fill="%231a1a1a"/><rect x="140" y="220" width="20" height="12" fill="%231a1a1a"/><rect x="138" y="315" width="12" height="8" fill="%231a1a1a"/><rect x="150" y="315" width="12" height="8" fill="%231a1a1a"/><path d="M 160 185 L 180 180 L 185 190 L 165 195 Z" fill="%231a1a1a"/><path d="M 140 190 L 120 185 L 115 195 L 135 200 Z" fill="%231a1a1a"/><rect x="100" y="450" width="80" height="3" fill="%231a1a1a"/><rect x="200" y="455" width="60" height="3" fill="%231a1a1a"/><path d="M 30 470 Q 35 465 40 470 L 45 480 L 35 485 Z" fill="%231a1a1a"/><path d="M 320 465 L 330 460 L 340 470 L 330 475 Z" fill="%231a1a1a"/><circle cx="370" cy="480" r="8" fill="%231a1a1a"/></g></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 确保内容在背景之上 */
+.masthead,
+.page,
+.page__footer {
+  position: relative;
+  z-index: 1;
 }
