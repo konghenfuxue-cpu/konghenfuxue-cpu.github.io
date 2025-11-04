@@ -42,27 +42,44 @@ body {
 }
 
 /* ========== 导航菜单 ========== */
-.greedy-nav a {
-  color: $quixote-bg !important;
-  font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px !important;
-  position: relative !important;
+.greedy-nav {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
   
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: $quixote-accent;
-    transition: width 0.3s ease;
-    transform: translateX(-50%);
+  a {
+    color: #fefef8 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    position: relative !important;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: $quixote-accent;
+      transition: width 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    &:hover::after {
+      width: 100%;
+    }
   }
   
-  &:hover::after {
-    width: 100%;
+  .visible-links a {
+    color: #fefef8 !important;
+  }
+  
+  button {
+    background: $quixote-border !important;
+    color: #fefef8 !important;
+    
+    &:hover {
+      background: $quixote-accent !important;
+    }
   }
 }
 
