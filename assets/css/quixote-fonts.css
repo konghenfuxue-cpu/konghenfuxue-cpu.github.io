@@ -1,0 +1,22 @@
+/* 
+ * 堂吉诃德风格字体导入
+ * Don Quixote Style Fonts
+ */
+
+/* Google Fonts - 手写风格和古典衬线字体 */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Philosopher:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* 
+ * 字体定义:
+ * - Cinzel: 优雅的大写字母,适合标题
+ * - Crimson Text: 古典衬线字体,适合正文
+ * - EB Garamond: 经典Old-style字体
+ * - Philosopher: 独特的手写风格
+ */
+
+:root {
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-heading: 'EB Garamond', Georgia, serif;
+  --font-body: 'Crimson Text', Georgia, serif;
+  --font-handwriting: 'Philosopher', cursive, Georgia;
+}

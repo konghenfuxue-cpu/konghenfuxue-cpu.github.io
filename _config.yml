@@ -9,6 +9,7 @@
 # Basic Site Settings
 locale                   : "zh-CN"
 site_theme               : "default" # Currently available options are "default", "air"
+don_quixote_style        : true      # 启用堂吉诃德艺术风格 (黑白剪影主题)
 title                    : "黑背雪的个人博客"
 title_separator          : "-"
 name                     : &name "黑背雪"

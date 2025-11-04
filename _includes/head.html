@@ -18,6 +18,11 @@
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
 
+<!-- 堂吉诃德风格字体 -->
+{% if site.don_quixote_style %}
+<link rel="stylesheet" href="{{ base_path }}/assets/css/quixote-fonts.css">
+{% endif %}
+
 <!-- Google Analytics -->
 {% if site.analytics.provider == "google-gtag" and site.analytics.google.tracking_id %}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.tracking_id }}"></script>
