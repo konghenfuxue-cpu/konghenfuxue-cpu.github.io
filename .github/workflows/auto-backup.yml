@@ -1,0 +1,44 @@
+name: 自动备份博客
+
+on:
+  # 每天凌晨3点自动备份
+  schedule:
+    - cron: '0 3 * * *'
+  # 手动触发
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 创建备份
+        run: |
+          # 创建备份分支名称(带日期)
+          BACKUP_BRANCH="backup-$(date +%Y-%m-%d)"
+          
+          # 创建并推送备份分支
+          git checkout -b $BACKUP_BRANCH
+          git push origin $BACKUP_BRANCH
+          
+          echo "备份完成: $BACKUP_BRANCH"
+
+      - name: 清理旧备份
+        run: |
+          # 保留最近30天的备份,删除更早的
+          git fetch --all
+          for branch in $(git branch -r | grep 'origin/backup-' | sed 's/origin\///'); do
+            BRANCH_DATE=$(echo $branch | sed 's/backup-//')
+            DAYS_OLD=$(( ($(date +%s) - $(date -d $BRANCH_DATE +%s)) / 86400 ))
+            if [ $DAYS_OLD -gt 30 ]; then
+              echo "删除旧备份: $branch ($DAYS_OLD 天前)"
+              git push origin --delete $branch
+            fi
+          done

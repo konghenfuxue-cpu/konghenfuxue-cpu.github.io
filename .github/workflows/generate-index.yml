@@ -1,0 +1,98 @@
+name: 生成文章索引
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '_posts/**'
+  workflow_dispatch:
+
+jobs:
+  generate-index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 生成文章索引
+        run: |
+          python3 << 'EOF'
+          import os
+          import re
+          from datetime import datetime
+          from pathlib import Path
+          
+          # 读取所有文章
+          posts_dir = Path('_posts')
+          articles = []
+          
+          for post_file in posts_dir.glob('*.md'):
+              with open(post_file, 'r', encoding='utf-8') as f:
+                  content = f.read()
+                  
+              # 提取前置信息
+              match = re.search(r'---\n(.*?)\n---', content, re.DOTALL)
+              if match:
+                  front_matter = match.group(1)
+                  title_match = re.search(r"title:\s*['\"]?(.*?)['\"]?\n", front_matter)
+                  date_match = re.search(r'date:\s*(\d{4}-\d{2}-\d{2})', front_matter)
+                  
+                  if title_match and date_match:
+                      articles.append({
+                          'title': title_match.group(1),
+                          'date': date_match.group(1),
+                          'file': post_file.name
+                      })
+          
+          # 按日期排序
+          articles.sort(key=lambda x: x['date'], reverse=True)
+          
+          # 生成索引文件
+          index_content = f"""# 博客文章索引
+          
+          > 最后更新: {datetime.now().strftime('%Y年%m月%d日')}
+          
+          共有 {len(articles)} 篇文章
+          
+          ## 文章列表
+          
+          """
+          
+          current_year = None
+          for article in articles:
+              year = article['date'][:4]
+              if year != current_year:
+                  index_content += f"\n### {year}年\n\n"
+                  current_year = year
+              
+              index_content += f"- **{article['date']}** - [{article['title']}](/_posts/{article['file']})\n"
+          
+          # 保存索引文件
+          with open('ARTICLES_INDEX.md', 'w', encoding='utf-8') as f:
+              f.write(index_content)
+          
+          print(f"生成完成,共 {len(articles)} 篇文章")
+          EOF
+
+      - name: 提交索引文件
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add ARTICLES_INDEX.md
+          
+          if git diff --staged --quiet; then
+            echo "索引无变化"
+          else
+            git commit -m "docs: 更新文章索引 [skip ci]"
+            git push
+          fi

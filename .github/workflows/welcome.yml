@@ -1,0 +1,65 @@
+name: 欢迎新访客
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+  discussion:
+    types: [created]
+  discussion_comment:
+    types: [created]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      discussions: write
+    
+    steps:
+      - name: 欢迎新的 Issue 提交者
+        if: github.event_name == 'issues'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const creator = context.payload.sender.login;
+            
+            // 检查是否是第一次提交 issue
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              creator: creator,
+              state: 'all'
+            });
+            
+            if (issues.data.length === 1) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: `👋 欢迎 @${creator}！\n\n感谢你提交第一个 Issue!我会尽快查看并回复。\n\n如果你对这个博客有任何建议或发现了问题,欢迎随时反馈! 😊`
+              });
+            }
+
+      - name: 感谢评论者
+        if: github.event_name == 'issue_comment'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const commenter = context.payload.sender.login;
+            const owner = context.repo.owner;
+            
+            if (commenter !== owner) {
+              // 随机选择一个表情
+              const emojis = ['👍', '💯', '🙏', '✨', '🎉', '❤️'];
+              const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+              
+              await github.rest.reactions.createForIssueComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: context.payload.comment.id,
+                content: '+1'
+              });
+            }

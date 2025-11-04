@@ -1,0 +1,61 @@
+name: SEO 优化检查
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '_posts/**'
+      - '_pages/**'
+      - '_config.yml'
+  workflow_dispatch:
+
+jobs:
+  seo-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: 构建网站
+        run: bundle exec jekyll build
+
+      - name: 检查 SEO
+        run: |
+          echo "## SEO 检查报告" > seo_report.md
+          echo "" >> seo_report.md
+          
+          # 检查标题长度
+          echo "### 标题长度检查" >> seo_report.md
+          find _posts -name "*.md" | while read file; do
+            title=$(grep "^title:" "$file" | sed 's/title: *//;s/["\x27]//g')
+            length=${#title}
+            if [ $length -gt 60 ]; then
+              echo "⚠️ 标题过长 ($length 字符): $file - $title" >> seo_report.md
+            elif [ $length -lt 10 ]; then
+              echo "⚠️ 标题过短 ($length 字符): $file - $title" >> seo_report.md
+            fi
+          done
+          
+          # 检查描述
+          echo "" >> seo_report.md
+          echo "### 描述检查" >> seo_report.md
+          find _posts -name "*.md" | while read file; do
+            if ! grep -q "^description:" "$file" && ! grep -q "^excerpt:" "$file"; then
+              echo "⚠️ 缺少描述: $file" >> seo_report.md
+            fi
+          done
+          
+          # 输出报告
+          cat seo_report.md
+
+      - name: 上传 SEO 报告
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report
+          path: seo_report.md
