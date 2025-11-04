@@ -1,0 +1,17 @@
+# 个人博客导航菜单
+
+main:
+  - title: "首页"
+    url: /
+
+  - title: "博客"
+    url: /year-archive/
+    
+  - title: "分类"
+    url: /categories/
+    
+  - title: "标签"
+    url: /tags/
+    
+  - title: "关于我"
+    url: /about/
