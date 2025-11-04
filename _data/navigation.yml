@@ -13,8 +13,8 @@ main:
   - title: "分类"
     url: /categories/
     
-  - title: "标签"
-    url: /tags/
+  - title: "回忆"
+    url: /memories/
     
   - title: "关于我"
     url: /about/

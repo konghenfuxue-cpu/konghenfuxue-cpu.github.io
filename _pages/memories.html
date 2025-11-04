@@ -1,0 +1,132 @@
+---
+layout: archive
+title: "回忆"
+permalink: /memories/
+author_profile: true
+---
+
+<style>
+.memory-item {
+  background: #fefef8;
+  border: 2px solid #3d3d3d;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.memory-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3d3d3d 0%, #d4a574 50%, #3d3d3d 100%);
+}
+
+.memory-date {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.9em;
+  color: #d4a574;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.memory-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.5em;
+  color: #1a1a1a;
+  border-bottom: 2px solid #d4a574;
+  padding-bottom: 0.3em;
+  margin-bottom: 1em;
+}
+
+.memory-content {
+  font-family: 'Crimson Text', Georgia, serif;
+  line-height: 1.8;
+  color: #2d2d2d;
+  font-style: italic;
+}
+
+.memory-tag {
+  display: inline-block;
+  background: #3d3d3d;
+  color: #fefef8;
+  padding: 0.3em 0.8em;
+  margin-right: 0.5em;
+  margin-top: 1em;
+  font-size: 0.85em;
+  border-radius: 3px;
+}
+</style>
+
+<div style="text-align: center; padding: 2em 0; border-bottom: 2px solid #d4a574; margin-bottom: 2em;">
+  <h1 style="font-family: 'EB Garamond', Georgia, serif; font-size: 2.5em; color: #1a1a1a;">时光回忆录</h1>
+  <p style="font-style: italic; color: #666;">那些值得铭记的时光碎片</p>
+</div>
+
+<div class="memory-item">
+  <div class="memory-date">📅 2025年11月4日</div>
+  <h2 class="memory-title">🎨 博客改版之旅</h2>
+  <div class="memory-content">
+    <p>今天,我将个人博客从学术模板改造成了堂吉诃德艺术风格。从最初的简单想法,到黑白剪影的设计,再到羊皮纸纹理和古典字体的选择,每一步都充满了创造的乐趣。</p>
+    <p>虽然遇到了Git同步问题、CSS编译错误、网络连接中断等各种挑战,但最终还是完成了这个独特的设计。这个过程让我想起了堂吉诃德——即使面对困难,也要坚持理想。</p>
+  </div>
+  <span class="memory-tag">技术</span>
+  <span class="memory-tag">设计</span>
+  <span class="memory-tag">成长</span>
+</div>
+
+<div class="memory-item">
+  <div class="memory-date">📅 待添加...</div>
+  <h2 class="memory-title">✨ 你的回忆</h2>
+  <div class="memory-content">
+    <p>这里将记录你的珍贵回忆。可以是学习中的顿悟时刻,可以是项目完成后的喜悦,也可以是生活中的温暖瞬间。</p>
+    <p>每一段回忆都是时光的馈赠,值得被铭记和珍藏。</p>
+  </div>
+</div>
+
+---
+
+## 如何添加新回忆
+
+在这个页面中添加新的回忆片段,格式如下:
+
+```html
+<div class="memory-item">
+  <div class="memory-date">📅 日期</div>
+  <h2 class="memory-title">标题</h2>
+  <div class="memory-content">
+    <p>回忆内容...</p>
+  </div>
+  <span class="memory-tag">标签1</span>
+  <span class="memory-tag">标签2</span>
+</div>
+```
+
+{% include base_path %}
+{% assign memories = site.posts | where_exp: "post", "post.categories contains 'memories'" %}
+
+{% if memories.size > 0 %}
+<h2 style="font-family: 'EB Garamond', Georgia, serif; color: #1a1a1a; border-bottom: 2px solid #d4a574; padding-bottom: 0.5em; margin-top: 2em;">来自博客文章的回忆</h2>
+
+{% for post in memories %}
+  <div class="memory-item">
+    <div class="memory-date">📅 {{ post.date | date: "%Y年%m月%d日" }}</div>
+    <h2 class="memory-title">
+      <a href="{{ base_path }}{{ post.url }}" style="color: #1a1a1a; text-decoration: none;">
+        {{ post.title }}
+      </a>
+    </h2>
+    <div class="memory-content">
+      {{ post.excerpt }}
+    </div>
+    {% if post.tags %}
+      {% for tag in post.tags %}
+        <span class="memory-tag">{{ tag }}</span>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endfor %}
+{% endif %}
