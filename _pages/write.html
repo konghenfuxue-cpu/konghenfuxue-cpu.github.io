@@ -101,25 +101,16 @@ author_profile: true
   </div>
 
   <div class="write-tabs">
-    <div class="write-tab active" onclick="switchTab('blog')">📝 博客文章</div>
-    <div class="write-tab" onclick="switchTab('notes')">🌙 散记</div>
+    <div class="write-tab active" onclick="switchTab('notes')">🌙 散记</div>
     <div class="write-tab" onclick="switchTab('memory')">💭 回忆</div>
     <div class="write-tab" onclick="switchTab('all')">📂 管理所有</div>
   </div>
 
-  <!-- 博客文章编辑器 -->
-  <div id="blog" class="editor-container active">
-    <div style="margin-bottom: 1em;">
-      <button class="quick-btn" onclick="createNewPost('blog')">➕ 创建新博客文章</button>
-      <button class="quick-btn" onclick="viewAllPosts()">📋 查看所有文章</button>
-    </div>
-    <iframe id="blog-frame" class="editor-frame" src="https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/blob/master/_posts/"></iframe>
-  </div>
-
   <!-- 散记编辑器 -->
-  <div id="notes" class="editor-container">
+  <div id="notes" class="editor-container active">
     <div style="margin-bottom: 1em;">
       <button class="quick-btn" onclick="createNewPost('notes')">➕ 创建新散记</button>
+      <button class="quick-btn" onclick="viewAllPosts()">📋 查看所有文章</button>
     </div>
     <iframe id="notes-frame" class="editor-frame" src="https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/blob/master/_posts/"></iframe>
   </div>
@@ -176,9 +167,7 @@ function createNewPost(type) {
   const today = new Date().toISOString().split('T')[0];
   let url = '';
   
-  if (type === 'blog') {
-    url = `https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/new/master/_posts?filename=${today}-new-post.md`;
-  } else if (type === 'notes') {
+  if (type === 'notes') {
     url = `https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/new/master/_posts?filename=${today}-notes-.md`;
   } else if (type === 'memory') {
     url = `https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/new/master/_posts?filename=${today}-memory-.md`;
@@ -192,7 +181,7 @@ function editMemoryPage() {
 }
 
 function viewAllPosts() {
-  document.getElementById('blog-frame').src = 'https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/tree/master/_posts';
+  document.getElementById('notes-frame').src = 'https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/tree/master/_posts';
 }
 </script>
 
