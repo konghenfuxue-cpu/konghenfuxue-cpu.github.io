@@ -3,9 +3,6 @@
 main:
   - title: "首页"
     url: /
-
-  - title: "博客"
-    url: /year-archive/
     
   - title: "✍️ 写作"
     url: /write/
