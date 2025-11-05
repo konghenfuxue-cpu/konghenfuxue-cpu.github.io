@@ -157,7 +157,9 @@ author_profile: true
 ```
 
 {% include base_path %}
-{% assign learning_posts = site.posts | where_exp: "post", "post.categories contains 'learning' or post.categories contains '学习'" %}
+{% assign learning_posts_en = site.posts | where_exp: "post", "post.categories contains 'learning'" %}
+{% assign learning_posts_cn = site.posts | where_exp: "post", "post.categories contains '学习'" %}
+{% assign learning_posts = learning_posts_en | concat: learning_posts_cn %}
 
 {% if learning_posts.size > 0 %}
 <h2 style="font-family: 'EB Garamond', Georgia, serif; color: #1a1a1a; border-bottom: 2px solid #d4a574; padding-bottom: 0.5em; margin-top: 2em;">来自博客文章的学习笔记</h2>
