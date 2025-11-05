@@ -102,7 +102,7 @@ author_profile: true
 
   <div class="write-tabs">
     <div class="write-tab active" onclick="switchTab('notes')">🌙 散记</div>
-    <div class="write-tab" onclick="switchTab('memory')">💭 回忆</div>
+    <div class="write-tab" onclick="switchTab('learning')">� 学习</div>
     <div class="write-tab" onclick="switchTab('all')">📂 管理所有</div>
   </div>
 
@@ -115,13 +115,13 @@ author_profile: true
     <iframe id="notes-frame" class="editor-frame" src="https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/blob/master/_posts/"></iframe>
   </div>
 
-  <!-- 回忆编辑器 -->
-  <div id="memory" class="editor-container">
+  <!-- 学习笔记编辑器 -->
+  <div id="learning" class="editor-container">
     <div style="margin-bottom: 1em;">
-      <button class="quick-btn" onclick="editMemoryPage()">✏️ 编辑回忆页面</button>
-      <button class="quick-btn" onclick="createNewPost('memory')">➕ 创建回忆文章</button>
+      <button class="quick-btn" onclick="editLearningPage()">✏️ 编辑学习页面</button>
+      <button class="quick-btn" onclick="createNewPost('learning')">➕ 创建学习笔记</button>
     </div>
-    <iframe id="memory-frame" class="editor-frame" src="https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/blob/master/_pages/memories.html"></iframe>
+    <iframe id="learning-frame" class="editor-frame" src="https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/blob/master/_pages/learning.html"></iframe>
   </div>
 
   <!-- 文件管理 -->
@@ -169,15 +169,15 @@ function createNewPost(type) {
   
   if (type === 'notes') {
     url = `https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/new/master/_posts?filename=${today}-notes-.md`;
-  } else if (type === 'memory') {
-    url = `https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/new/master/_posts?filename=${today}-memory-.md`;
+  } else if (type === 'learning') {
+    url = `https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/new/master/_posts?filename=${today}-learning-.md`;
   }
   
   document.getElementById(type + '-frame').src = url;
 }
 
-function editMemoryPage() {
-  document.getElementById('memory-frame').src = 'https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/blob/master/_pages/memories.html';
+function editLearningPage() {
+  document.getElementById('learning-frame').src = 'https://github.dev/konghenfuxue-cpu/konghenfuxue-cpu.github.io/blob/master/_pages/learning.html';
 }
 
 function viewAllPosts() {

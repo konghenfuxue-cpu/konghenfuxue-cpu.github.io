@@ -1,0 +1,183 @@
+---
+layout: archive
+title: "学习笔记"
+permalink: /learning/
+author_profile: true
+---
+
+<style>
+.learning-item {
+  background: #fefef8;
+  border: 2px solid #3d3d3d;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  margin-bottom: 2em;
+  position: relative;
+  border-radius: 4px;
+}
+
+.learning-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3d3d3d 0%, #d4a574 50%, #3d3d3d 100%);
+}
+
+.learning-category {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.9em;
+  color: #d4a574;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.learning-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.6em;
+  color: #1a1a1a;
+  border-bottom: 2px solid #d4a574;
+  padding-bottom: 0.3em;
+  margin-bottom: 1em;
+}
+
+.learning-content {
+  font-family: 'Crimson Text', Georgia, serif;
+  line-height: 1.8;
+  color: #2d2d2d;
+}
+
+.learning-tag {
+  display: inline-block;
+  background: #3d3d3d;
+  color: #fefef8;
+  padding: 0.3em 0.8em;
+  margin-right: 0.5em;
+  margin-top: 1em;
+  font-size: 0.85em;
+  border-radius: 3px;
+}
+
+.progress-bar {
+  background: #f0f0f0;
+  height: 8px;
+  border-radius: 4px;
+  margin-top: 1em;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #3d3d3d 0%, #d4a574 100%);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+</style>
+
+<div style="text-align: center; padding: 2em 0; border-bottom: 2px solid #d4a574; margin-bottom: 2em;">
+  <h1 style="font-family: 'EB Garamond', Georgia, serif; font-size: 2.5em; color: #1a1a1a;">📚 学习笔记</h1>
+  <p style="font-style: italic; color: #666;">记录学习过程中的收获与思考</p>
+</div>
+
+<div class="learning-item">
+  <div class="learning-category">📌 嵌入式系统</div>
+  <h2 class="learning-title">STM32单片机开发</h2>
+  <div class="learning-content">
+    <p><strong>学习内容:</strong></p>
+    <ul>
+      <li>STM32 HAL库使用</li>
+      <li>GPIO、定时器、串口通信</li>
+      <li>中断系统和DMA配置</li>
+      <li>实时操作系统(FreeRTOS)基础</li>
+    </ul>
+    <p><strong>学习收获:</strong> 掌握了嵌入式系统的基本开发流程,能够独立完成简单的硬件控制项目。</p>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 60%;"></div>
+  </div>
+  <span class="learning-tag">嵌入式</span>
+  <span class="learning-tag">STM32</span>
+  <span class="learning-tag">进行中</span>
+</div>
+
+<div class="learning-item">
+  <div class="learning-category">🎨 前端开发</div>
+  <h2 class="learning-title">Jekyll静态网站构建</h2>
+  <div class="learning-content">
+    <p><strong>学习内容:</strong></p>
+    <ul>
+      <li>Jekyll基础架构和Liquid模板语言</li>
+      <li>Markdown写作和YAML配置</li>
+      <li>GitHub Pages部署流程</li>
+      <li>SCSS样式定制</li>
+    </ul>
+    <p><strong>学习收获:</strong> 成功搭建了个人博客,并定制了堂吉诃德艺术风格主题。学会了Git版本控制和自动化部署。</p>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 80%;"></div>
+  </div>
+  <span class="learning-tag">Web开发</span>
+  <span class="learning-tag">Jekyll</span>
+  <span class="learning-tag">已完成</span>
+</div>
+
+<div class="learning-item">
+  <div class="learning-category">🎓 待学习</div>
+  <h2 class="learning-title">你的下一个学习目标</h2>
+  <div class="learning-content">
+    <p>在这里添加你计划学习的新技能和知识...</p>
+  </div>
+  <span class="learning-tag">规划中</span>
+</div>
+
+---
+
+## 📝 如何添加学习笔记
+
+在这个页面中添加新的学习记录,格式如下:
+
+```html
+<div class="learning-item">
+  <div class="learning-category">📌 分类</div>
+  <h2 class="learning-title">学习主题</h2>
+  <div class="learning-content">
+    <p><strong>学习内容:</strong></p>
+    <ul>
+      <li>知识点1</li>
+      <li>知识点2</li>
+    </ul>
+    <p><strong>学习收获:</strong> 描述你的收获...</p>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 50%;"></div>
+  </div>
+  <span class="learning-tag">标签</span>
+</div>
+```
+
+{% include base_path %}
+{% assign learning_posts = site.posts | where_exp: "post", "post.categories contains 'learning' or post.categories contains '学习'" %}
+
+{% if learning_posts.size > 0 %}
+<h2 style="font-family: 'EB Garamond', Georgia, serif; color: #1a1a1a; border-bottom: 2px solid #d4a574; padding-bottom: 0.5em; margin-top: 2em;">来自博客文章的学习笔记</h2>
+
+{% for post in learning_posts %}
+  <div class="learning-item">
+    <div class="learning-category">📅 {{ post.date | date: "%Y年%m月%d日" }}</div>
+    <h2 class="learning-title">
+      <a href="{{ base_path }}{{ post.url }}" style="color: #1a1a1a; text-decoration: none;">
+        {{ post.title }}
+      </a>
+    </h2>
+    <div class="learning-content">
+      {{ post.excerpt }}
+    </div>
+    {% if post.tags %}
+      {% for tag in post.tags %}
+        <span class="learning-tag">{{ tag }}</span>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endfor %}
+{% endif %}
