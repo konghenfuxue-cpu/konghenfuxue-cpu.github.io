@@ -7,9 +7,6 @@ main:
   - title: "散记"
     url: /notes/
 
-  - title: "分类"
-    url: /categories/
-
   - title: "学习"
     url: /learning/
 
