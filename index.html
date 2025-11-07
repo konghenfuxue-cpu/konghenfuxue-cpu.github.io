@@ -1,0 +1,496 @@
+---
+layout: default
+title: 主页
+permalink: /
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <style>
+        /* ============ 全局样式 ============ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --text-color: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background: var(--bg-light);
+        }
+
+        /* ============ 导航栏 ============ */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ============ Hero 区域 ============ */
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-content .description {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .hero-avatar {
+            text-align: center;
+        }
+
+        .avatar-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .avatar-img:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .motto {
+            margin-top: 2rem;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* ============ 统计卡片 ============ */
+        .stats-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ============ 项目展示 ============ */
+        .projects-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: transform 0.3s;
+        }
+
+        .project-link:hover {
+            transform: scale(1.05);
+        }
+
+        /* ============ 页脚 ============ */
+        .footer {
+            background: white;
+            margin-top: 4rem;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-stat {
+            color: var(--text-light);
+        }
+
+        /* ============ 响应式设计 ============ */
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .avatar-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ 动画效果 ============ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* ============ 深色模式支持 ============ */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #e0e0e0;
+                --text-light: #b0b0b0;
+                --bg-light: #1a1a1a;
+            }
+
+            body {
+                background: #121212;
+            }
+
+            .navbar, .stat-card, .project-card, .footer {
+                background: #1e1e1e;
+            }
+
+            .navbar {
+                box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">{{ site.title | default: "黑背雪的学习笔记" }}</div>
+            <ul class="nav-links">
+                <li><a href="/">首页</a></li>
+                <li><a href="/posts/">学习笔记</a></li>
+                <li><a href="/projects/">项目</a></li>
+                <li><a href="/tools/">工具</a></li>
+                <li><a href="/about/">关于</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero fade-in-up">
+        <div class="hero-content">
+            <h1>Hi, I'm 黑背雪 👋</h1>
+            <p class="subtitle">人工智能与心理研究爱好者</p>
+            <p class="description">
+                绍兴文理学院在读学生，专注于 AI、嵌入式、编程与自动化领域的学习与探索。
+                持续记录每天的学习进展、技术探索与生活思考。
+            </p>
+            
+            <div class="social-links">
+                <a href="https://github.com/konghenfuxue-cpu" class="social-link" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:konghenfuxue@gmail.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://heibeixue.me" class="social-link" target="_blank" title="Blog">
+                    <i class="fas fa-blog"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-avatar">
+            <img src="/images/avatar.jpg" alt="Avatar" class="avatar-img">
+            <p class="motto">持续记录、持续进步</p>
+        </div>
+    </section>
+
+    <!-- 统计卡片 -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card fade-in-up">
+                <div class="stat-icon">📝</div>
+                <div class="stat-value">{{ site.posts.size }}</div>
+                <div class="stat-label">篇文章</div>
+            </div>
+
+            <div class="stat-card fade-in-up" style="animation-delay: 0.1s;">
+                <div class="stat-icon">💻</div>
+                <div class="stat-value">12</div>
+                <div class="stat-label">个项目</div>
+            </div>
+
+            <div class="stat-card fade-in-up" style="animation-delay: 0.2s;">
+                <div class="stat-icon">🔧</div>
+                <div class="stat-value">15</div>
+                <div class="stat-label">个工具</div>
+            </div>
+
+            <div class="stat-card fade-in-up" style="animation-delay: 0.3s;">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-value">365</div>
+                <div class="stat-label">天坚持</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section class="projects-section">
+        <h2 class="section-title">精选项目</h2>
+        
+        <div class="projects-grid">
+            <div class="project-card fade-in-up">
+                <img src="/images/project1.jpg" alt="Project 1" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">项目名称 1</h3>
+                    <p class="project-description">
+                        这是一个精彩的项目描述，介绍项目的主要功能和技术栈。
+                    </p>
+                    <a href="#" class="project-link">查看详情 →</a>
+                </div>
+            </div>
+
+            <div class="project-card fade-in-up" style="animation-delay: 0.1s;">
+                <img src="/images/project2.jpg" alt="Project 2" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">项目名称 2</h3>
+                    <p class="project-description">
+                        这是另一个项目的描述，展示您的技术能力和创新思维。
+                    </p>
+                    <a href="#" class="project-link">查看详情 →</a>
+                </div>
+            </div>
+
+            <div class="project-card fade-in-up" style="animation-delay: 0.2s;">
+                <img src="/images/project3.jpg" alt="Project 3" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">项目名称 3</h3>
+                    <p class="project-description">
+                        第三个项目的简介，突出项目的独特之处和价值。
+                    </p>
+                    <a href="#" class="project-link">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-stats">
+            <span class="footer-stat">🎯 123,731 次访问</span>
+            <span class="footer-stat">📖 305,478 字内容</span>
+        </div>
+        <p>© 2023-2025 黑背雪. <a href="https://github.com/konghenfuxue-cpu/konghenfuxue-cpu.github.io">本站源码</a></p>
+    </footer>
+
+    <!-- Font Awesome 图标 -->
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -18,3 +18,11 @@ main:
     
   - title: "关于我"
     url: /about/
+
+  - title: "实用工具"
+    url: /tools/
+    description: "在线工具集合"
+
+  - title: "设计示例"
+    url: /demo/
+    description: "TimelessTales 设计模板展示"
