@@ -3,25 +3,18 @@
 main:
   - title: "首页"
     url: /
-    
-  - title: "✍️ 写作"
-    url: /write/
-    
+
   - title: "散记"
     url: /notes/
-    
+
   - title: "分类"
     url: /categories/
-    
+
   - title: "学习"
     url: /learning/
-    
+
   - title: "关于我"
     url: /about/
-
-  - title: "实用工具"
-    url: /tools/
-    description: "在线工具集合"
 
   - title: "设计示例"
     url: /demo/
