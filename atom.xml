@@ -6,7 +6,7 @@
   <link href="https://heibeixue.me/atom.xml" rel="self"/>
   
   <link href="https://heibeixue.me/"/>
-  <updated>2025-12-04T13:03:24.892Z</updated>
+  <updated>2025-12-05T08:48:29.509Z</updated>
   <id>https://heibeixue.me/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>载仁负生</title>
+    <link href="https://heibeixue.me/posts/%E6%96%B0%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/"/>
+    <id>https://heibeixue.me/posts/%E6%96%B0%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/</id>
+    <published>2025-12-05T08:43:57.000Z</published>
+    <updated>2025-12-05T08:48:29.509Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是将过去电子记录的系列，持续存在</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;这是将过去电子记录的系列，持续存在&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="过去" scheme="https://heibeixue.me/tags/%E8%BF%87%E5%8E%BB/"/>
+    
+    <category term="记录" scheme="https://heibeixue.me/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
