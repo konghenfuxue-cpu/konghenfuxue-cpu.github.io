@@ -1,3 +1,8 @@
-/* build time:Fri Dec 05 2025 21:53:09 GMT+0800 (中国标准时间)*/
-#article-container img{max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px}
-/* rebuild by neat */
+/* 限制文章内图片的最大宽度，防止撑破布局 */
+#article-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* 让图片自动居中 */
+    border-radius: 8px; /* 可选：给图片加个圆角，更好看 */
+}
