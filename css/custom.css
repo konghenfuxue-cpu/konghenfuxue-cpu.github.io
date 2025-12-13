@@ -6,3 +6,7 @@
     margin: 0 auto; /* 让图片自动居中 */
     border-radius: 8px; /* 可选：给图片加个圆角，更好看 */
 }
+/* 全局平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}

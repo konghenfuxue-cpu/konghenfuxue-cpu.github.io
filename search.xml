@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>载仁负生</title>
+    <url>/posts/3b3fba03.html</url>
+    <content><![CDATA[<p>这是将过去电子记录的系列，持续存在</p>
+]]></content>
+      <tags>
+        <tag>过去</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何玩galgame</title>
+    <url>/posts/4465bc51.html</url>
+    <content><![CDATA[<p>下面我会根据俄罗斯网站rutracker视觉小说区的公告对如何玩galgame进行讲解</p>
+]]></content>
+      <tags>
+        <tag>经验分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一次四级英语考试后感</title>
+    <url>/posts/3b1a0539.html</url>
+    <content><![CDATA[<p>早上7点左右起床，突然想到要用的2b铅笔还没有买，在校园的两个超市，只找到了类似铅笔的美术2b铅笔，大约8:13到考场所在楼层一层，门口要检查准考证，而且要求将背包手机都放到一楼，进去后突然发现，没带收音机，跑回寝室，回到考场一楼时，快到8:30，匆忙放好书包，跑到考场所在楼层，发现大家还在等，部分同学将手机绕过保安带上楼层，9:00进考场，9:10一切弄好，开始写作，四级考试的试卷像小册子一样，封面是提示，最后页面（原条形码面）是写作，大约9:40开始听听力，先试音，任何正式开始~~</p>
+]]></content>
+      <tags>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
-    <url>/posts/hello-world/</url>
+    <url>/posts/4a17b156.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -17,33 +45,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>载仁负生</title>
-    <url>/posts/%E6%96%B0%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/</url>
-    <content><![CDATA[<p>这是将过去电子记录的系列，持续存在</p>
-]]></content>
-      <tags>
-        <tag>过去</tag>
-        <tag>记录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何玩galgame</title>
-    <url>/posts/%E6%96%B0%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>下面我会根据俄罗斯网站rutracker视觉小说区的公告对如何玩galgame进行讲解</p>
-]]></content>
-      <tags>
-        <tag>经验分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一次四级英语考试后感</title>
-    <url>/posts/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%9B%9B%E7%BA%A7%E8%8B%B1%E8%AF%AD%E8%80%83%E8%AF%95%E5%90%8E%E6%84%9F/</url>
-    <content><![CDATA[<p>早上7点左右起床，突然想到要用的2b铅笔还没有买，在校园的两个超市，只找到了类似铅笔的美术2b铅笔，大约8:13到考场所在楼层一层，门口要检查准考证，而且要求将背包手机都放到一楼，进去后突然发现，没带收音机，跑回寝室，回到考场一楼时，快到8:30，匆忙放好书包，跑到考场所在楼层，发现大家还在等，部分同学将手机绕过保安带上楼层，9:00进考场，9:10一切弄好，开始写作，四级考试的试卷像小册子一样，封面是提示，最后页面（原条形码面）是写作，大约9:40开始听听力，先试音，任何正式开始~~</p>
-]]></content>
-      <tags>
-        <tag>记录</tag>
-      </tags>
   </entry>
 </search>
