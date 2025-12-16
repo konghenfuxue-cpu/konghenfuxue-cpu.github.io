@@ -40,7 +40,48 @@
   <entry>
     <title>如何玩galgame</title>
     <url>/posts/4465bc51.html</url>
-    <content><![CDATA[<p>下面我会根据俄罗斯网站rutracker视觉小说区的公告对如何玩galgame进行讲解<br>如何玩galgame<br>1;如何找资源<br>2;如何翻译<br>3;如何找攻略<br>&emsp;后面我将从这三个方面尝试进行galgame分享<br>资源寻找方面大家可以尝试俄罗斯网站rutracker,他们的游戏破解速度可以说是世界先进的,<br>而且视觉小说界面的公告栏也有非常非常棒的常见问题解答,比如翻译,文字捕捉等等,这个网站是以种子进行分享的,不涉及网盘这些。<br>&emsp;github上也有一些非常不错的视觉小说翻译项目比如LunaTranslator,BallonsTranslator这些。在面对一些比较冷门生肉的游戏,可以尝试<br>种子下载器 大家可以尝试qBittorrent,或者github上非常热门的增强版(自行寻找)，比如这个qBittorrent-Enhanced-Edition搜索<br>如果想录制自己的游戏过程,可以尝试OBS Studio这个录屏软件,具体用法可以在b站搜索。如果一些视觉游戏用常规手段难以卸载,可以试试BCUninstaller或geek。想要记录自己的玩法心得进行分享Obsidian软件十分推荐,md格式可以在个人博客网站直接发布。网站图床可以尝试PicGo加github,具体用法在网上也是有非常多教程的,视频加音乐有时候在俄罗斯网站下载时可能遇到格式不适应导致无法播放的情况,可以尝试<br>PotPlayer加foobar2000,foobar2000大家可以尝试github上的foobox-cn <br>到此,视觉小说游玩的前与后基本的问题粗略思考过,过程中遇到的问题,则需要大家发挥自己的特殊性进行解决（ps;如果遇到一些非常难以通关全成就的游戏,且非常冷门到没有完整的攻略,有可能可以尝试GitHub上的Game-Cheats-Manager或许有帮助）</p>
+    <content><![CDATA[<p>下面我会结合俄罗斯网站 Rutracker 视觉小说区的公告，对“如何更优雅地游玩 Galgame”进行讲解。</p>
+<p>主要包含以下三个方面：</p>
+<ol>
+<li>如何找资源</li>
+<li>如何翻译（生肉啃不动怎么办）</li>
+<li>辅助工具与攻略寻找</li>
+</ol>
+<hr>
+<h3 id="1-如何找资源"><a href="#1-如何找资源" class="headerlink" title="1. 如何找资源"></a>1. 如何找资源</h3><p>在资源寻找方面，推荐大家尝试 <strong>Rutracker</strong>。<br>他们的游戏更新及破解速度非常快，而且视觉小说（Visual Novel）板块的公告栏有非常详尽的 FAQ，涵盖了翻译、文字捕捉等常见问题。</p>
+<ul>
+<li><strong>下载方式</strong>：该网站主要以<strong>种子 (Torrent)</strong> 进行分享，不依赖网盘，资源存活率高。</li>
+<li><strong>下载工具</strong>：<ul>
+<li><strong>qBittorrent</strong>：老牌下载器，稳定可靠。</li>
+<li><strong>qBittorrent-Enhanced-Edition</strong>：在 GitHub 上非常热门的增强版，特别适合屏蔽吸血雷，建议自行搜索下载。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-如何解决语言障碍-翻译工具"><a href="#2-如何解决语言障碍-翻译工具" class="headerlink" title="2. 如何解决语言障碍 (翻译工具)"></a>2. 如何解决语言障碍 (翻译工具)</h3><p>面对没有汉化的“生肉”游戏，GitHub 上有一些非常优秀的开源视觉小说翻译项目：</p>
+<ul>
+<li><strong>LunaTranslator</strong>：功能强大，支持多种 OCR 和翻译引擎。</li>
+<li><strong>BallonsTranslator</strong>：另一种选择，界面友好。</li>
+</ul>
+<h3 id="3-提升体验的辅助工具"><a href="#3-提升体验的辅助工具" class="headerlink" title="3. 提升体验的辅助工具"></a>3. 提升体验的辅助工具</h3><p>这里分享一套：</p>
+<ul>
+<li><strong>卸载清理</strong>：<br>如果遇到游戏难以通过常规手段卸载，可以使用 <strong>BCUninstaller</strong> 或 <strong>Geek Uninstaller</strong> 强力清除残留。</li>
+<li><strong>录制分享</strong>：<br>想录制游戏过程？首选 <strong>OBS Studio</strong>，具体配置教程在 B 站非常多。</li>
+<li><strong>心得记录</strong>：<br>强烈推荐 <strong>Obsidian</strong>。它的 Markdown 格式可以在个人博客（Hexo）直接发布，实现“笔记即文章”。</li>
+<li><strong>图床搭配</strong>：<br>Obsidian 配合 <strong>PicGo + GitHub</strong> 图床，可以实现图片的自动上传和链接生成。</li>
+<li><strong>影音播放</strong>：<br>如果在下载的资源中遇到视频或音频格式无法播放（缺少解码器）：<ul>
+<li>视频：推荐 <strong>PotPlayer</strong>。</li>
+<li>音频：推荐 <strong>foobar2000</strong>，特别是 GitHub 上的 <strong>foobox-cn</strong> 美化版。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-攻略与成就-进阶"><a href="#4-攻略与成就-进阶" class="headerlink" title="4. 攻略与成就 (进阶)"></a>4. 攻略与成就 (进阶)</h3><p>遇到极其冷门、没有完整攻略，或者难以全成就通关的游戏：</p>
+<ul>
+<li>可以尝试 GitHub 上的 <strong>Game-Cheats-Manager</strong>，或许能通过修改的方式帮你突破难关。</li>
+</ul>
+<hr>
+<blockquote>
+<p><strong>结语</strong>：到此，视觉小说游玩前、中、后的基本问题都涵盖了。过程中遇到的特殊问题，就需要大家发挥动手能力去解决了！</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>经验分享</tag>
